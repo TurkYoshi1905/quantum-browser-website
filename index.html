@@ -1,0 +1,351 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>QuantumBrowser — Web'in daha ferah hâli | Rust tabanlı, gizlilik öncelikli tarayıcı</title>
+  <meta name="description" content="QuantumBrowser: Rust çekirdekli, yerleşik reklam engelleyici, şifreli şifre kasası, HTTPS zorunluluğu ve sıfır telemetri ile gelen açık kaynak masaüstü tarayıcı. Windows x64 için ücretsiz indirin." />
+  <meta name="theme-color" content="#0a0a0f" />
+  <meta name="color-scheme" content="dark" />
+  <link rel="icon" type="image/png" href="varliklar/logo.png" />
+  <link rel="alternate" hreflang="tr" href="https://quantum-browser-website.vercel.app/" />
+  <link rel="alternate" hreflang="en" href="https://quantum-browser-website.vercel.app/en/" />
+  <link rel="canonical" href="https://quantum-browser-website.vercel.app/" />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="QuantumBrowser" />
+  <meta property="og:title" content="QuantumBrowser — Web'in daha ferah hâli" />
+  <meta property="og:description" content="Rust çekirdekli, reklam engellemeli, gizlilik öncelikli, Arc tarzı masaüstü tarayıcı. Sıfır telemetri. Açık kaynak (AGPL-3.0)." />
+  <meta property="og:url" content="https://quantum-browser-website.vercel.app/" />
+  <meta property="og:image" content="https://quantum-browser-website.vercel.app/varliklar/logo.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <link rel="manifest" href="manifest.webmanifest" />
+  <link rel="stylesheet" href="stil.css" />
+</head>
+<body>
+<div class="ambient" aria-hidden="true"><div class="grid-lines"></div></div>
+
+<!-- ═══════════ ÜST BAR ═══════════ -->
+<header class="nav">
+  <div class="container nav-inner">
+    <a class="brand" href="#">
+      <img src="varliklar/logo.png" alt="QuantumBrowser logosu" width="30" height="30" />
+      <span>QuantumBrowser<small>QUANTUMBROWSER · v0.0.1</small></span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="#ozellikler">Özellikler</a></li>
+      <li><a href="#teknoloji">Teknoloji</a></li>
+      <li><a href="#indirme">İndir</a></li>
+      <li><a href="#notlar">Sürüm Notları</a></li>
+      <li><a class="lang-switch" href="en/index.html" lang="en" hreflang="en">EN</a></li>
+      <li><a class="icon-link" href="https://github.com/TurkYoshi1905/quantum-browser" target="_blank" rel="noreferrer" aria-label="GitHub">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .5C5.65.5.5 5.65.5 12c0 5.08 3.29 9.39 7.86 10.91.58.11.79-.25.79-.56 0-.28-.01-1.02-.02-2-3.2.7-3.88-1.54-3.88-1.54-.52-1.33-1.28-1.68-1.28-1.68-1.04-.71.08-.7.08-.7 1.15.08 1.76 1.18 1.76 1.18 1.03 1.76 2.7 1.25 3.36.96.1-.75.4-1.25.72-1.54-2.55-.29-5.24-1.28-5.24-5.69 0-1.26.45-2.29 1.18-3.1-.12-.29-.51-1.46.11-3.04 0 0 .96-.31 3.15 1.18a10.8 10.8 0 0 1 5.83 0c2.19-1.5 3.15-1.18 3.15-1.18.62 1.58.23 2.75.11 3.04.73.81 1.18 1.84 1.18 3.1 0 4.42-2.7 5.39-5.27 5.67.41.36.78 1.08.78 2.17 0 1.57-.01 2.83-.01 3.22 0 .31.21.67.8.56A10.52 10.52 0 0 0 23.5 12C23.5 5.65 18.35.5 12 .5z"/></svg>
+      </a></li>
+      <li><a class="nav-cta" href="#indirme">Ücretsiz İndir</a></li>
+    </ul>
+    <button class="hamburger" id="hamburger" aria-label="Menüyü aç/kapat" aria-expanded="false">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><line x1="4" y1="7" x2="20" y2="7"/><line x1="4" y1="12" x2="20" y2="12"/><line x1="4" y1="17" x2="20" y2="17"/></svg>
+    </button>
+  </div>
+  <div class="mobile-menu" id="mobile-menu">
+    <a href="#ozellikler">Özellikler</a>
+    <a href="#teknoloji">Teknoloji</a>
+    <a href="#indirme">İndir</a>
+    <a href="#notlar">Sürüm Notları</a>
+    <a href="en/index.html" lang="en" hreflang="en">English version</a>
+    <a href="https://github.com/TurkYoshi1905/quantum-browser" target="_blank" rel="noreferrer">GitHub kaynak kodu</a>
+  </div>
+</header>
+
+<!-- ═══════════ HERO ═══════════ -->
+<div class="container hero">
+  <div class="hero-grid">
+    <div>
+      <span class="badge"><span class="dot"></span>v0.0.1 · Windows x64 · Ücretsiz</span>
+      <h1 class="hero-title">Web'in daha<br /><span class="accent">ferah hâli.</span></h1>
+      <p class="hero-sub">QuantumBrowser; Rust çekirdeği, yerleşik reklam engelleyici, şifreli şifre kasası ve Arc tarzı arayüzüyle gelen gizlilik öncelikli açık kaynak tarayıcısı. Telemetri yok, gözetim yok — sadece web.</p>
+      <div class="hero-ctas">
+        <a class="btn btn-primary" href="#indirme">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+          Ücretsiz İndir
+        </a>
+        <a class="btn btn-ghost" href="https://github.com/TurkYoshi1905/quantum-browser" target="_blank" rel="noreferrer">Kaynak kodu GitHub'da</a>
+      </div>
+      <div class="trust-row">
+        <span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg>AGPL-3.0 açık kaynak</span>
+        <span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg>Sıfır telemetri</span>
+        <span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg>Veri cihazınızda kalır</span>
+      </div>
+    </div>
+    <div>
+      <!-- Gerçek ekran görüntüsü bırakılırsa (varliklar/ekran-goruntusu.png) otomatik devralır; yoksa CSS mock -->
+      <img id="hero-shot" class="shot-frame" src="varliklar/ekran-goruntusu.png" alt="QuantumBrowser kuşbakışı: dikey sekme çubuğu, adres çubuğu ve ferah Yeni Sekme ekranı" style="display:none; border-radius: 16px;" />
+      <div class="shot-frame" id="hero-mock" role="img" aria-label="QuantumBrowser penceresi: dikey sekmeler, omnibox ve koyu Yeni Sekme">
+        <div class="titlebar">
+          <span class="tdot r"></span><span class="tdot y"></span><span class="tdot g"></span>
+          <span style="color: var(--faint); font-size: 11px; margin-left: 8px;">QuantumBrowser — Yeni Sekme</span>
+        </div>
+        <div class="urlbar">
+          <svg class="lock" width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+          quantum://newtab
+        </div>
+        <div class="body">
+          <div class="side">
+            <div class="tab on"></div>
+            <div class="tab"></div>
+            <div class="tab"></div>
+            <div class="tab"></div>
+          </div>
+          <div class="content">
+            <div>
+              <div class="clock">21:47</div>
+              <div class="searchline"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <p class="shot-caption">QuantumBrowser v0.0.1 — Arc tarzı dikey sekme çubuğu, omnibox ve Yeni Sekme hub'ı</p>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════ İLK BÖLÜM: İSTATİSTİKLER ═══════════ -->
+<div class="stats">
+  <div class="container stats-inner">
+    <div class="stat"><b>~110</b><small>ENGELLENEN AĞ</small></div>
+    <div class="stat"><b>0</b><small>TELEMETRİ</small></div>
+    <div class="stat"><b>FTS5</b><small>TAM METİN ARAMA</small></div>
+    <div class="stat"><b>AES-256</b><small>ŞİFRE KASASI</small></div>
+    <div class="stat"><b>AGPL</b><small>AÇIK KAYNAK</small></div>
+  </div>
+</div>
+
+<!-- ═══════════ ÖZELLİKLER ═══════════ -->
+<section id="ozellikler">
+  <div class="container">
+    <p class="eyebrow">Özellikler</p>
+    <h2 class="section-title">Küçük ama dolu dolu.</h2>
+    <p class="section-sub">Klasik tarayıcılardan farklı olarak; reklam engelleme, şifreli kasanız ve gizlilik, eklenti değil — çekirdekte.</p>
+    <div class="features">
+      <div class="card"><div class="icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div><h3>Quantum Şifre Kasası</h3><p>Ana parolayla kilitlenir; Argon2id + AES-256-GCM. Düz metin şifreniz hiçbir zaman diske yazılmaz.</p></div>
+      <div class="card"><div class="icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg></div><h3>HTTPS Zorunluluğu</h3><p>Şifresiz siteler bloke; "Bu site güvenli değil" uyarısı ve tek seferlik "yine de devam et" seçeneği.</p></div>
+      <div class="card"><div class="icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 2l2.4 7.2H22l-6 4.8 2.3 7.2-6.3-4.6-6.3 4.6 2.3-7.2-6-4.8h7.6z"/></svg></div><h3>Reklam &amp; İzleyici Engelleyici</h3><p>~110 bilinen ağ Chromium seviyesinde kesilir; sayaç sekme şeridindeki kalkan rozetinde parlar.</p></div>
+      <div class="card"><div class="icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="3"/><line x1="9" y1="3" x2="9" y2="21"/></svg></div><h3>Dikey Sekme Çubuğu</h3><p>Arc tarzı sidebar; sürükle-bırak grupları, sabitleme, çoğaltma, Ctrl+Shift+T ile geri açma.</p></div>
+      <div class="card"><div class="icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.5" y2="16.5"/></svg></div><h3>FTS5 Tam Metin Arama</h3><p>Geçmiş ve yer imlerinde milisaniye; toplu seçim ve temizleme tek klikle.</p></div>
+      <div class="card"><div class="icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 12 12 17 22 12"/><polyline points="2 17 12 22 22 17"/></svg></div><h3>Oturum Geri Yükleme</h3><p>Kapattığınızda açık sekmeleriniz aynen döner; "Kaldığım yerden aç" her zaman açık.</p></div>
+      <div class="card"><div class="icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="9" cy="7" r="4"/><path d="M2 21v-2a4 4 0 0 1 4-4h6a4 4 0 0 1 4 4v2"/><line x1="20" y1="8" x2="20" y2="14"/><line x1="17" y1="11" x2="23" y2="11"/></svg></div><h3>Çoklu Profil &amp; Gizli Mod</h3><p>Profiller ayrı WebView2 veri dizinlerinde izole; gizli sekmeler diske hiçbir şey yazmaz.</p></div>
+      <div class="card"><div class="icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 3a9 9 0 0 1 0 18z"/></svg></div><h3>Açık / Koyu / Sistem Teması</h3><p>Canlı senkron — tema değişince tüm iç sayfalar anında döner; vurgu rengi size kalmış.</p></div>
+      <div class="card"><div class="icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="3"/><path d="M8 10h.01M12 10h.01M16 10h.01"/></svg></div><h3>quantum:// İç Sayfalar</h3><p>Ayarlar, Geçmiş, Yer İmleri, İndirmeler, Profiller, Şifre Kasası — hepsi sekmede, Chrome akışı gibi.</p></div>
+      <div class="card"><div class="icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg></div><h3>Yerel İndirme Yöneticisi</h3><p>Downloads/QuantumBrowser klasörüne; tamamlanan/kalanlar Ayarlar → İndirmeler'de.</p></div>
+      <div class="card"><div class="icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><line x1="9" y1="12" x2="15" y2="12"/></svg></div><h3>Sıfır Telemetri</h3><p>Davranışlarınız cihazınızdan çıkmaz; "kişi başı" değil, sunucu bile yok.</p></div>
+      <div class="card"><div class="icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg></div><h3>Açık Kaynak · AGPL-3.0</h3><p>Rust + React + Tauri ile yazıldı; dil bilene kapımız açık: forkleyin, inceleyin, katkı verin.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════ TEKNOLOJİ ═══════════ -->
+<section id="teknoloji" style="padding-top: 20px;">
+  <div class="container">
+    <p class="eyebrow">Teknoloji</p>
+    <h2 class="section-title">Hızlı bir gövde,<br />temiz bir motor.</h2>
+    <p class="section-sub">QuantumBrowser'ın kalbinde iki dünyayı buluşturan bir mimari var: Rust güvenliği ve WebView2'nin Chromium gücü.</p>
+    <div class="stack">
+      <div class="stack-item"><span class="ver">1.99</span><b>Rust</b><span>Bellek güvenli çekirdek; sekme motoru, şifre kasası, indirme ve engelleyici burada doğar.</span></div>
+      <div class="stack-item"><span class="ver">v2.12</span><b>Tauri</b><span>Yerel pencere kabı; WebView2 üzerinden Chromium motoru, 2 MB altı çıplak ikili.</span></div>
+      <div class="stack-item"><span class="ver">18.3</span><b>React</b><span>Kabuk arayüzü ve iç sayfalar; bileşen mimarisi, anlık tema/accent senkronu.</span></div>
+      <div class="stack-item"><span class="ver">5.6</span><b>TypeScript</b><span>Uçtan uca tip güvenliği; IPC yüzeyleri, snapshot'lar, kırılma yok.</span></div>
+      <div class="stack-item"><span class="ver">Chromium</span><b>WebView2</b><span>Microsoft'un katıştırılmış tarayıcı motoru; her site Chrome gibi açılır.</span></div>
+      <div class="stack-item"><span class="ver">FTS5</span><b>SQLite</b><span>Yer imi, geçmiş, profil, ayar — hepsi yerel FTS5 indeksli veritabanı.</span></div>
+      <div class="stack-item"><span class="ver">RFC 9106</span><b>Argon2id</b><span>Şifre kasası anahtarı; bellek sert KDF ile kaba kuvvet anlamsız.</span></div>
+      <div class="stack-item"><span class="ver">FIPS 197</span><b>AES-256-GCM</b><span>Kayıt-başına nonce; kasadaki her alan AEAD ile mühürlü.</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════ GEREKSİNİMLER ═══════════ -->
+<section id="gereksinimler" style="padding-top: 20px;">
+  <div class="container">
+    <p class="eyebrow">Gereksinimler</p>
+    <h2 class="section-title">Sade bir liste.</h2>
+    <p class="section-sub">QuantumBrowser sade ve cesur: ağır makine ister değil, sade Windows 10/11 ister.</p>
+    <table class="reqs">
+      <thead><tr><th>Bileşen</th><th>Gereksinim</th></tr></thead>
+      <tbody>
+        <tr><td>İşletim Sistemi</td><td>Windows 10 1809+ veya Windows 11 (64-bit, x64)</td></tr>
+        <tr><td>WebView2 Runtime</td><td>Windows 11'de yerleşik; Windows 10'da yoksa kurulumcu otomatik indirir</td></tr>
+        <tr><td>Disk Alanı</td><td>~200 MB (kurulum sonrası)</td></tr>
+        <tr><td>Bellek</td><td>Asgari bir sınırlama yok; Chromium motoru kadar makul</td></tr>
+        <tr><td>İzinler</td><td>Yönetici gerekmez — kurulum "Kullanıcı" kapsamındadır (currentUser)</td></tr>
+        <tr><td>İmza</td><td>İmzasız derleme (v1.0 hedefi); SmartScreen rehberi için <a href="#indirme" style="color: var(--accent-2)">aşağısına bakın</a></td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<!-- ═══════════ İNDİR ═══════════ -->
+<section id="indirme" style="padding-top: 20px;">
+  <div class="container">
+    <p class="eyebrow">İndirme</p>
+    <h2 class="section-title">Sürüm v0.0.1 — "İlk Işık"</h2>
+    <p class="section-sub">Windows x64 için ücretsiz. GitHub üzerinden derleme zinciriyle otomatik üretilir; SHA256 ile doğrulanır.</p>
+    <div class="download-wrap">
+      <div class="exe-card">
+        <div class="exe-head">
+          <img class="exe-icon" src="varliklar/logo.png" alt="QuantumBrowser .exe ikonu" width="84" height="84" />
+          <div>
+            <div class="exe-name">QuantumBrowser_0.0.1_x64-setup.exe</div>
+            <div class="exe-meta">2,86 MB · NSIS kurulumcu · currentUser kurulum · 11 Kasım 2026</div>
+          </div>
+        </div>
+        <a class="btn btn-primary" style="width: 100%; justify-content: center;" href="https://github.com/TurkYoshi1905/quantum-browser/releases/latest/download/QuantumBrowser_0.0.1_x64-setup.exe">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+          v0.0.1'i İndir — Windows x64
+        </a>
+        <div class="sha-box">
+          <b>SHA256 doğrulama <button class="copy-btn" id="copy-sha" type="button">Kopyala</button></b>
+          <code id="sha-text">91014546CDD0486E9EAF481853BF20AF8640B64719041DC5594B8A80388CFAAE</code>
+          <span style="display:block; margin-top:8px; font-size:10px; color: var(--faint)">v0.0.1-build.24 için. Her yeni release'te hash otomatik güncellenir (SHA256SUMS.txt).</span>
+        </div>
+        <ol class="steps">
+          <li>Dosyayı indirin ve çalıştırın.</li>
+          <li>Windows <strong>"PC'niz korundu"</strong> uyarısı verirse <strong>More info → Run anyway</strong> seçin (imzasız olduğu için).</li>
+          <li>Kurulum "Kullanıcı" kapsamındadır; yönetici hakkı istemz.</li>
+          <li>WebView2 yoksa kurulumcu sizin adınıza indirip kurar.</li>
+        </ol>
+        <a class="btn btn-ghost btn-sm" style="margin-top: 14px;" href="https://github.com/TurkYoshi1905/quantum-browser/releases" target="_blank" rel="noreferrer">Tüm release'ler ve SHA256SUMS →</a>
+      </div>
+      <div>
+        <div class="callout">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" style="flex: 0 0 auto; margin-top: 2px"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+          <span><strong>İmzasız derleme uyarısı.</strong> QuantumBrowser v0.0.1 ücretli kod imza sertifikasına sahip değildir; bu yüzden Windows SmartScreen görürseniz bu normaldir. İmzalama v1.0 hedefidir. Kaynak kodun tamamı GitHub'da açıktır — şüphelenirseniz derleme kendinizinkini doğrulayın ya da SHA256'yı karşılaştırın.</span>
+        </div>
+        <div class="callout green" style="margin-top: 14px;">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" style="flex: 0 0 auto; margin-top: 2px"><path d="M20 6L9 17l-5-5"/></svg>
+          <span><strong>Bütünlük garantisi.</strong> Her release GitHub Actions'ta derlenir, log'ları herkese açıktır ve SHA256, release notu ile <code style="background: rgba(0,0,0,.3); padding: 0 5px; border-radius: 4px;">SHA256SUMS.txt</code> içine otomatik yazılır.</span>
+        </div>
+        <div class="callout green" style="margin-top: 14px; border-color: rgba(167,139,250,.35); background: rgba(139,92,246,.07); color: var(--accent-3);">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" style="flex: 0 0 auto; margin-top: 2px"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+          <span><strong>Gizlilik.</strong> Kurulum telemetri göndermez, hesap gerektirmez, "giriş yap" demez. Verileriniz yalnızca <code style="background: rgba(0,0,0,.3); padding: 0 5px; border-radius: 4px;">%LOCALAPPDATA%\com.quantum.browser</code> içinde durur.</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════ SÜRÜM NOTLARI ═══════════ -->
+<section id="notlar" style="padding-top: 20px;">
+  <div class="container">
+    <p class="eyebrow">Güncelleme Notları</p>
+    <h2 class="section-title">Her sürüm, kayıtlı.</h2>
+    <p class="section-sub">Her release özel notlarla yayımlanır. v0.0.1'in tam notları aşağıda; yenileri GitHub Releases ve bu sayfada listelenir.</p>
+
+    <div class="notes">
+      <details class="note" open>
+        <summary><span class="tag">v0.0.1</span> QuantumBrowser v0.0.1 — "İlk Işık" <span class="date">11 Kasım 2026</span></summary>
+        <div class="note-body">
+          <p>İlk genel yayın. Rust + Tauri v2 + React ile inşa edildi; reklam engelleyici, şifre kasası ve gizlilik çekirdekte.</p>
+          <h4>Yeni</h4>
+          <ul>
+            <li><strong>Quantum Şifre Kasası</strong> — Argon2id anahtar türetme, AES-256-GCM mühürleme, parola üretecisi, şifreli dışa/içe aktarım (quantum://vault)</li>
+            <li><strong>HTTPS Zorunluluğu</strong> — HTTP siteler engellenir; "yine de devam et" tek seferlik bypass</li>
+            <li><strong>Vurgu rengi</strong> — mor, mavi, teal, amber, yeşil, kırmızı; tüm sayfalara anlık yansır</li>
+            <li><strong>Oturum geri yükleme</strong> ve <strong>Ctrl+Shift+T</strong> ile kapattığını geri açma</li>
+            <li><strong>Canlı tema</strong> — kabuk + tüm iç sayfalar anlık senkron</li>
+            <li><strong>Çoklu profil + gizli mod</strong>, sekme grupları, sabitleme, çoğaltma</li>
+            <li><strong>Yer imleri/geçmiş</strong> FTS5 tam metin arama + toplu silme</li>
+            <li><strong>Premium Yeni Sekme</strong> — saat, tarih, hızlı erişim, selamlaşma</li>
+          </ul>
+          <h4>Düzeltmeler (bu geliştirme döngüsü)</h4>
+          <ul>
+            <li>Migrate sırası: <code>no such table: main.history</code> çökmesi giderildi</li>
+            <li>⋮ menüsünün odağı çalıp tarayıcıyı kilitlemesi giderildi (popover artık kabuk odağını çalmıyor)</li>
+            <li>Popover konumu ölçeklenen ekranlarda (125%/150%) yanlış düşüyordu — CSS piksel tabanına alındı</li>
+            <li>Şifre kasası derlemesi: <code>OsRng</code> import düzeltmesi (E0432)</li>
+            <li>İçererek kapatma/açma sonrası boş sekme kalmama; profil değişince/eklenince otomatik Yeni Sekme</li>
+          </ul>
+          <h4>Teknik</h4>
+          <p>Tauri v2.12 · Rust 1.99 · React 18 · TypeScript 5.6 · Vite 5 · WebView2 · SQLite FTS5 · Argon2id · AES-256-GCM · Lucide</p>
+          <h4>Bilinen sınırlar</h4>
+          <ul>
+            <li>Chrome uzantıları desteklenmez (WebView2 sınırı)</li>
+            <li>Bazı siteler Google kimliğiyle 403 dönebilir; DRM'li içerikte oynatma farklılaşabilir</li>
+            <li>İmzasız derleme: SmartScreen uyarısı normaldir (bkz. İndirme bölümü)</li>
+          </ul>
+          <p style="margin-top: 12px;"><a href="https://github.com/TurkYoshi1905/quantum-browser/releases/tag/v0.0.1" target="_blank" rel="noreferrer" style="color: var(--accent-2)">GitHub'da bu sürümün notları →</a></p>
+        </div>
+      </details>
+      <details class="note">
+        <summary><span class="tag">yol haritası</span> Sırada ne var? <span class="date">v0.0.2+</span></summary>
+        <div class="note-body">
+          <ul>
+            <li>Kriptografik imza (v1.0 hedefi) ve otomatik güncelleyici</li>
+            <li>Site bazlı "kayıtlı şifre var" bildirimi ve tek tık doldurma</li>
+            <li>Gelişmiş download klavye kısayolları, sekme arama (Ctrl+Shift+A)</li>
+            <li>Daha fazla tema ve NewTab duvar kağıdı seçenekleri</li>
+          </ul>
+        </div>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════ SSS ═══════════ -->
+<section id="sss" style="padding-top: 20px;">
+  <div class="container">
+    <p class="eyebrow">S.S.S.</p>
+    <h2 class="section-title">Sorular?</h2>
+    <div class="faq">
+      <details><summary>SmartScreen "PC'niz korundu" diyor, ne yapmalıyım?</summary><p>More info → Run anyway seçin. QuantumBrowser imzasızdır; bu uyarı Microsoft'un bilinmeyen imzasız uygulamalara uyguladığı standart kontroldür. İmzalama v1.0 hedefidir; o zamana dek kaynak kodu ve SHA256'nız güvencedir.</p></details>
+      <details><summary>Chrome uzantılarımı kullanabilir miyim?</summary><p>Hayır — WebView2, Chromium eklenti modelini sunmaz. Ancak reklam/izleyici engelleyici, şifre kasası ve indirme yöneticisi gibi çoğu uzantı işlevi yerleşiktir.</p></details>
+      <details><summary>Verilerim nerede saklanıyor?</summary><p>%LOCALAPPDATA%\com.quantum.browser içinde SQLite dosyalarında: geçmiş, yer imleri, ayarlar, profiller ve <code>vault.db</code> (şifre kasanız — ana parolanızla şifreli). Sunucuya hiçbir şey gönderilmez.</p></details>
+      <details><summary>Ana parolamı unutursam?</summary><p>Şifre kasası kurtarılamaz — anahtar türetme tek yönlüdür. Kayıtlı şifreler için yalnızca <em>siz</em> açabilirsiniz; bu yüzden ana parolanızı güvenli yere not edin.</p></details>
+      <details><summary>WebView2 yoksa ne olur?</summary><p>Windows 11'de yerleşiktir. Windows 10'da yoksa kurulumcu bunu otomatik indirip kurar; ek bir işlem gerekmez.</p></details>
+      <details><summary>Nasıl güncellerim?</summary><p>Release sayfasından yeni sürümü indirip kurun. Otomatik güncelleyici v1.0 ile planlanıyor.</p></details>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════ SON CTA ═══════════ -->
+<div class="container cta-final">
+  <h2>Web size gelsin.<br />Sızanlar sayılmasın.</h2>
+  <p>QuantumBrowser'ı deneyin — 3 MB kurulum, sıfır hesap, sıfır telemetri.</p>
+  <div class="hero-ctas" style="justify-content: center; margin-bottom: 0;">
+    <a class="btn btn-primary" href="#indirme">Şimdi İndir — Ücretsiz</a>
+    <a class="btn btn-ghost" href="https://github.com/TurkYoshi1905/quantum-browser" target="_blank" rel="noreferrer">Starlayın</a>
+  </div>
+</div>
+
+<!-- ═══════════ FOOTER ═══════════ -->
+<footer>
+  <div class="container">
+    <div class="foot-grid">
+      <div class="foot-col">
+        <h5>QuantumBrowser</h5>
+        <a href="#ozellikler">Özellikler</a>
+        <a href="#teknoloji">Teknoloji</a>
+        <a href="#indirme">İndir</a>
+        <a href="#notlar">Sürüm Notları</a>
+      </div>
+      <div class="foot-col">
+        <h5>Kaynak</h5>
+        <a href="https://github.com/TurkYoshi1905/quantum-browser" target="_blank" rel="noreferrer">GitHub Deposu</a>
+        <a href="https://github.com/TurkYoshi1905/quantum-browser/issues" target="_blank" rel="noreferrer">Sorun Bildirin</a>
+        <a href="https://github.com/TurkYoshi1905/quantum-browser/releases" target="_blank" rel="noreferrer">Tüm Release'ler</a>
+      </div>
+      <div class="foot-col">
+        <h5>Yasal</h5>
+        <a href="https://github.com/TurkYoshi1905/quantum-browser/blob/main/LICENSE" target="_blank" rel="noreferrer">GNU AGPL-3.0 Lisansı</a>
+        <a href="https://quantum-browser-website.vercel.app/en/index.html" hreflang="en" lang="en">English version</a>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© <span id="year">2026</span> QuantumBrowser — açık kaynak, AGPL-3.0.</span>
+      <span>Telemetri yok · İzleyici yok · Söz: veriniz cihazınızdadır. · <a href="https://github.com/TurkYoshi1905/quantum-browser">TurkYoshi1905/quantum-browser</a></span>
+    </div>
+  </div>
+</footer>
+
+<script src="app.js"></script>
+</body>
+</html>
