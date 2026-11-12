@@ -243,7 +243,7 @@
         <summary><span class="tag">v0.0.1</span> QuantumBrowser v0.0.1 — “First Light” <span class="date">11 November 2026</span></summary>
         <div class="note-body">
           <p>First public release. Built on Rust + Tauri v2 + React; ad blocking, vault and privacy are core.</p>
-          <h4>New</h4>
+          <h3>New</h3>
           <ul>
             <li><strong>Quantum Password Vault</strong> — Argon2id key derivation, AES-256-GCM sealing, password generator, encrypted export/import (quantum://vault)</li>
             <li><strong>Forced HTTPS</strong> — HTTP sites blocked; one-time “visit anyway” bypass</li>
@@ -254,7 +254,7 @@
             <li><strong>FTS5</strong> bookmarks/history search with bulk delete</li>
             <li><strong>Premium New Tab</strong> — clock, date, quick links, greeting</li>
           </ul>
-          <h4>Fixes (this cycle)</h4>
+          <h3>Fixes (this cycle)</h3>
           <ul>
             <li>Migration order: <code>no such table: main.history</code> crash</li>
             <li>⋮ menu stole shell focus and froze the browser — popover no longer activates the shell</li>
@@ -262,9 +262,9 @@
             <li>Vault build fix: <code>OsRng</code> import (E0432)</li>
             <li>New Tab auto-opens when the last tab closes / profile is created or switched</li>
           </ul>
-          <h4>Stack</h4>
+          <h3>Stack</h3>
           <p>Tauri v2.12 · Rust 1.99 · React 18 · TypeScript 5.6 · Vite 5 · WebView2 · SQLite FTS5 · Argon2id · AES-256-GCM · Lucide</p>
-          <h4>Known limits</h4>
+          <h3>Known limits</h3>
           <ul>
             <li>Chrome extensions are not supported (WebView2 limitation)</li>
             <li>Some sites may 403 on Google sign-in; DRM content may behave differently</li>
