@@ -3,7 +3,7 @@
 QuantumBrowser'ın resmi tanıtım sitesi. Saf statik HTML/CSS/JS — framework yok,
 derleme adımı yok, izleme yok. Türkçe (`/`) ve İngilizce (`/en/`) sürümleri içerir.
 
-- **Canlı adres:** https://quantum-browser-website.vercel.app
+- **Canlı adres:** https://quantumbrowser.vercel.app
 - **Kaynak kod (tarayıcı):** https://github.com/TurkYoshi1905/quantum-browser
 - **Yayın:** Vercel (GitHub reposu içe aktarılır)
 
@@ -36,7 +36,7 @@ QuantumBrowser Web Sitesi/
 5. 404 hatası almayın diye: `cleanUrls: true` açık; `/en/` derin linkleri sorunsuz
    (Vercel statik dosya arar, `en/index.html` mevcut).
 6. Özel alan adı eklerseniz (`quantumbrowser.com` gibi):
-   - `index.html` ve `en/index.html` içindeki `quantum-browser-website.vercel.app`
+   - `index.html` ve `en/index.html` içindeki `quantumbrowser.vercel.app`
      geçen tüm `canonical / og:url / hreflang / sitemap.xml / robots.txt` adreslerini
      yeni alan adınızla değiştirin (10 dakikalık iş).
 7. Favicon ve OG görsel aynı dosyadan (`logo.png`) beslenir; ekstra ayar gerekmez.
