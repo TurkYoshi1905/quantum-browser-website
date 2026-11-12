@@ -11,7 +11,7 @@
   --border-strong: rgba(255, 255, 255, 0.14);
   --text: #f5f5f7;
   --muted: #a1a1aa;
-  --faint: #71717a;
+  --faint: #9a9aa7;
   --accent: #8b5cf6;
   --accent-2: #a78bfa;
   --accent-3: #c4b5fd;
@@ -255,7 +255,7 @@ details.note[open] summary { border-bottom: 1px solid var(--border); }
 .cta-final p { color: var(--muted); margin: 14px auto 26px; max-width: 480px; }
 footer { border-top: 1px solid var(--border); padding: 44px 0 60px; color: var(--faint); font-size: 12px; }
 .foot-grid { display: flex; justify-content: space-between; gap: 34px; flex-wrap: wrap; }
-.foot-col h5 { color: var(--muted); font-size: 10.5px; letter-spacing: .12em; text-transform: uppercase; margin-bottom: 10px; }
+.foot-col h2 { color: var(--muted); font-size: 10.5px; letter-spacing: .12em; text-transform: uppercase; margin-bottom: 10px; }
 .foot-col a { display: block; color: var(--faint); text-decoration: none; margin-bottom: 7px; }
 .foot-col a:hover { color: var(--text); }
 .foot-bottom { display: flex; justify-content: space-between; gap: 20px; flex-wrap: wrap; margin-top: 30px; padding-top: 18px; border-top: 1px solid var(--border); }
