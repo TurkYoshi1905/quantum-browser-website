@@ -31,7 +31,7 @@
   <div class="container nav-inner">
     <a class="brand" href="../index.html" hreflang="tr" lang="tr">
       <img src="../varliklar/logo.png" alt="QuantumBrowser logo" width="30" height="30" />
-      <span>QuantumBrowser<small>QUANTUMBROWSER · v0.0.1</small></span>
+      <span>QuantumBrowser<small>QUANTUMBROWSER · v0.0.2</small></span>
     </a>
     <ul class="nav-links">
       <li><a href="#features">Features</a></li>
@@ -61,7 +61,7 @@
 <div class="container hero">
   <div class="hero-grid">
     <div>
-      <span class="badge"><span class="dot"></span>v0.0.1 · Windows x64 · Free</span>
+      <span class="badge"><span class="dot"></span>v0.0.2 · Windows x64 · Free</span>
       <h1 class="hero-title">The web,<br /><span class="accent">minus the noise.</span></h1>
       <p class="hero-sub">QuantumBrowser is a privacy-first, open-source desktop browser: a Rust core, a built-in ad &amp; tracker blocker, an encrypted password vault and an Arc-style interface. No telemetry, no surveillance — just the web.</p>
       <div class="hero-ctas">
@@ -185,24 +185,24 @@
 <section id="download" style="padding-top: 20px;">
   <div class="container">
     <p class="eyebrow">Download</p>
-    <h2 class="section-title">Version v0.0.1 — “First Light”</h2>
+    <h2 class="section-title">Version v0.0.2 — “The Menu Reborn”</h2>
     <p class="section-sub">Free for Windows x64. Built automatically by a transparent CI chain; verified by SHA256.</p>
     <div class="download-wrap">
       <div class="exe-card">
         <div class="exe-head">
           <img class="exe-icon" src="../varliklar/logo.png" alt="QuantumBrowser .exe icon" width="84" height="84" />
           <div>
-            <div class="exe-name">QuantumBrowser_0.0.1_x64-setup.exe</div>
-            <div class="exe-meta">2.86 MB · NSIS installer · per-user install · 11 November 2026</div>
+            <div class="exe-name">QuantumBrowser_0.0.2_x64-setup.exe</div>
+            <div class="exe-meta">≈2.9 MB · NSIS installer · per-user install · 12 November 2026</div>
           </div>
         </div>
-        <a class="btn btn-primary" style="width: 100%; justify-content: center;" href="https://github.com/TurkYoshi1905/quantum-browser/releases/latest/download/QuantumBrowser_0.0.1_x64-setup.exe">
+        <a class="btn btn-primary" style="width: 100%; justify-content: center;" href="https://github.com/TurkYoshi1905/quantum-browser/releases/latest/download/QuantumBrowser_0.0.2_x64-setup.exe">
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-          Download v0.0.1 — Windows x64
+          Download v0.0.2 — Windows x64
         </a>
         <div class="sha-box">
           <b>SHA256 verification <button class="copy-btn" id="copy-sha" type="button">Copy</button></b>
-          <code id="sha-text">DD3CF9C40552DD95E8E4B560B0FF69C4C3C959831E4E79829B3BA5901343EFD5</code>
+          <code id="sha-text">Will be updated after the 0.0.2 release — hash changes every build; see SHA256SUMS.txt</code>
           <span style="display:block; margin-top:8px; font-size:10px; color: var(--faint)">For v0.0.1 (build 25). The hash updates automatically every release (SHA256SUMS.txt).</span>
         </div>
         <ol class="steps">
@@ -240,6 +240,22 @@
 
     <div class="notes">
       <details class="note" open>
+        <summary><span class="tag">v0.0.2</span> QuantumBrowser v0.0.2 — "The Menu Reborn" <span class="date">12 November 2026</span></summary>
+        <div class="note-body">
+          <p>Critical patch: root-cause fix for the v0.0.1 menu issue.</p>
+          <h3>Fixed</h3>
+          <ul>
+            <li><strong>⋮ menu (critical)</strong> — Now opens as a child webview inside the shell window: always painted above pages, steals no focus, clickable, closes on outside click/Escape</li>
+            <li>The legacy "top-level popover" (transparent topmost window) approach is gone — invisible window, focus theft and click swallowing eliminated</li>
+            <li>Opening a new tab closes the menu automatically (Chrome behavior)</li>
+            <li>Menu position now uses viewport coordinates — no more drift on 125%/150% scaled displays</li>
+          </ul>
+          <h3>Stack</h3>
+          <p>Tauri v2 · Rust · React — the menu webview is created once with the "menu" label and collapses to 1×1 when hidden.</p>
+          <p style="margin-top: 12px;"><a href="https://github.com/TurkYoshi1905/quantum-browser/releases/tag/v0.0.2" target="_blank" rel="noreferrer" style="color: var(--accent-2)">Release notes on GitHub →</a></p>
+        </div>
+      </details>
+      <details class="note">
         <summary><span class="tag">v0.0.1</span> QuantumBrowser v0.0.1 — “First Light” <span class="date">11 November 2026</span></summary>
         <div class="note-body">
           <p>First public release. Built on Rust + Tauri v2 + React; ad blocking, vault and privacy are core.</p>

@@ -31,7 +31,7 @@
   <div class="container nav-inner">
     <a class="brand" href="#">
       <img src="varliklar/logo.png" alt="QuantumBrowser logosu" width="30" height="30" />
-      <span>QuantumBrowser<small>QUANTUMBROWSER · v0.0.1</small></span>
+      <span>QuantumBrowser<small>QUANTUMBROWSER · v0.0.2</small></span>
     </a>
     <ul class="nav-links">
       <li><a href="#ozellikler">Özellikler</a></li>
@@ -61,7 +61,7 @@
 <div class="container hero">
   <div class="hero-grid">
     <div>
-      <span class="badge"><span class="dot"></span>v0.0.1 · Windows x64 · Ücretsiz</span>
+      <span class="badge"><span class="dot"></span>v0.0.2 · Windows x64 · Ücretsiz</span>
       <h1 class="hero-title">Web'in daha<br /><span class="accent">ferah hâli.</span></h1>
       <p class="hero-sub">QuantumBrowser; Rust çekirdeği, yerleşik reklam engelleyici, şifreli şifre kasası ve Arc tarzı arayüzüyle gelen gizlilik öncelikli açık kaynak tarayıcısı. Telemetri yok, gözetim yok — sadece web.</p>
       <div class="hero-ctas">
@@ -186,24 +186,24 @@
 <section id="indirme" style="padding-top: 20px;">
   <div class="container">
     <p class="eyebrow">İndirme</p>
-    <h2 class="section-title">Sürüm v0.0.1 — "İlk Işık"</h2>
+    <h2 class="section-title">Sürüm v0.0.2 — "Menü Yeniden Doğdu"</h2>
     <p class="section-sub">Windows x64 için ücretsiz. GitHub üzerinden derleme zinciriyle otomatik üretilir; SHA256 ile doğrulanır.</p>
     <div class="download-wrap">
       <div class="exe-card">
         <div class="exe-head">
           <img class="exe-icon" src="varliklar/logo.png" alt="QuantumBrowser .exe ikonu" width="84" height="84" />
           <div>
-            <div class="exe-name">QuantumBrowser_0.0.1_x64-setup.exe</div>
+            <div class="exe-name">QuantumBrowser_0.0.2_x64-setup.exe</div>
             <div class="exe-meta">2,86 MB · NSIS kurulumcu · currentUser kurulum · 11 Kasım 2026</div>
           </div>
         </div>
-        <a class="btn btn-primary" style="width: 100%; justify-content: center;" href="https://github.com/TurkYoshi1905/quantum-browser/releases/latest/download/QuantumBrowser_0.0.1_x64-setup.exe">
+        <a class="btn btn-primary" style="width: 100%; justify-content: center;" href="https://github.com/TurkYoshi1905/quantum-browser/releases/latest/download/QuantumBrowser_0.0.2_x64-setup.exe">
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
           v0.0.1'i İndir — Windows x64
         </a>
         <div class="sha-box">
           <b>SHA256 doğrulama <button class="copy-btn" id="copy-sha" type="button">Kopyala</button></b>
-          <code id="sha-text">DD3CF9C40552DD95E8E4B560B0FF69C4C3C959831E4E79829B3BA5901343EFD5</code>
+          <code id="sha-text">0.0.2 yayınından sonra güncellenecek — her release hash'i değişir; bkz. SHA256SUMS.txt</code>
           <span style="display:block; margin-top:8px; font-size:10px; color: var(--faint)">v0.0.1 (build 25) için. Her yeni release'te hash otomatik güncellenir (SHA256SUMS.txt).</span>
         </div>
         <ol class="steps">
@@ -241,6 +241,22 @@
 
     <div class="notes">
       <details class="note" open>
+        <summary><span class="tag">v0.0.2</span> QuantumBrowser v0.0.2 — "Menü Yeniden Doğdu" <span class="date">12 Kasım 2026</span></summary>
+        <div class="note-body">
+          <p>Kritik yama: v0.0.1'deki menü sorununun kökten çözümü.</p>
+          <h3>Düzeltildi</h3>
+          <ul>
+            <li><strong>⋮ menüsü (kritik)</strong> — Artık kabuk penceresi içinde bir çocuk webview olarak açılıyor: her zaman sayfaların üstünde, odak çalmıyor, tıklanabilir, dış tıklama/Escape ile kapanıyor</li>
+            <li>Eski "top-level popover" (şeffaf üst pencere) yaklaşımı tamamen kaldırıldı — görünmez pencere, odak çalma ve tıklama yutma sorunları bitti</li>
+            <li>Yeni sekme açıldığında menü otomatik kapanır (Chrome davranışı)</li>
+            <li>Menü konumu artık viewport koordinatına göre — ölçekli ekranlarda (%125/%150) şaşmaz</li>
+          </ul>
+          <h3>Teknik</h3>
+          <p>Tauri v2 · Rust · React — menü webview'ı tek seferlik "menu" etiketiyle yaratılır, kapandığında 1×1'e küçülür.</p>
+          <p style="margin-top: 12px;"><a href="https://github.com/TurkYoshi1905/quantum-browser/releases/tag/v0.0.2" target="_blank" rel="noreferrer" style="color: var(--accent-2)">GitHub'da bu sürümün notları →</a></p>
+        </div>
+      </details>
+      <details class="note">
         <summary><span class="tag">v0.0.1</span> QuantumBrowser v0.0.1 — "İlk Işık" <span class="date">11 Kasım 2026</span></summary>
         <div class="note-body">
           <p>İlk genel yayın. Rust + Tauri v2 + React ile inşa edildi; reklam engelleyici, şifre kasası ve gizlilik çekirdekte.</p>
